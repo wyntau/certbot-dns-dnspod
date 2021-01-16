@@ -123,6 +123,6 @@ class _DNSPodLexiconClient(dns_common_lexicon.LexiconClient):
                                   .format(domain_name, e, ' ({0})'.format(hint) if hint else ''))
 
     def _handle_general_error(self, e, domain_name):
-        if not str(e).startswith('Domain name invalid'):
+        if not str(e).startswith('Domain name invalid') and not str(e).startswith('域名不正确，请输入主域名'):
             return errors.PluginError('Unexpected error determining zone identifier for {0}: {1}'
                                       .format(domain_name, e))
