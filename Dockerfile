@@ -1,4 +1,4 @@
-FROM certbot/certbot
+FROM certbot/certbot:v1.16.0
 
 COPY . src/certbot-dns-dnspod
 
